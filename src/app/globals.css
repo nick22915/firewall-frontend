@@ -1,26 +1,229 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 96%; /* #F5F5F5 - Very light gray */
+    --foreground: 230 10% 20%; /* Dark grayish blue for readability */
+    --card: 0 0% 100%;
+    --card-foreground: 230 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 10% 20%;
+    --primary: 231 48% 48%; /* #3F51B5 - Deep indigo */
+    --primary-foreground: 0 0% 100%; /* White for contrast on primary */
+    --secondary: 0 0% 90%; /* Slightly darker gray */
+    --secondary-foreground: 230 10% 15%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 230 5% 45%;
+    --accent: 215 30% 25%; 
+    --accent-foreground: 0 0% 100%; /* White for contrast on accent */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 231 48% 48%; /* Using primary color for ring */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --redfire: 2 64% 85%;
+    --greenfire: 120 50% 72%;
+
+    /* Sidebar specific variables - can be adjusted if sidebar is used */
+    --sidebar-background: 230 10% 15%; /* Darker for sidebar contrast */
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 187 100% 42%; /* Accent for sidebar primary actions */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 231 48% 58%; /* Lighter primary for sidebar accent */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 10% 25%;
+    --sidebar-ring: 187 100% 42%;
+  }
+
+  .dark {
+    --background: 230 15% 12%; /* Very dark blue for dark mode */
+    --foreground: 0 0% 90%; /* Light gray for text */
+    --card: 230 15% 17%;
+    --card-foreground: 0 0% 90%;
+    --popover: 230 15% 10%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 231 48% 58%; /* Lighter Indigo for dark mode */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 230 15% 25%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 230 15% 25%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 187 100% 52%; /* Lighter Cyan for dark mode */
+    --accent-foreground: 230 10% 10%; /* Dark for contrast on lighter cyan */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 230 15% 25%;
+    --input: 230 15% 25%;
+    --ring: 187 100% 52%; /* Using accent for ring in dark mode */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar specific variables for dark mode */
+    --sidebar-background: 230 15% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 187 100% 52%;
+    --sidebar-primary-foreground: 230 10% 10%;
+    --sidebar-accent: 231 48% 48%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 230 15% 20%;
+    --sidebar-ring: 187 100% 52%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    box-sizing: border-box; /* Example using standard CSS */
+    /* ... other standard CSS base styles */
+  }
+ 
 }
+
+
+        .styled-select {
+            display: block;
+            width: 100%; 
+           padding-top: 1rem;
+            font-size: 0.875rem; 
+            line-height: 1.25rem; 
+            border: 1px solid #d1d5db; 
+            border-radius: 0.375rem; 
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); 
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%234a5568%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E'); /* Icono de flecha hacia abajo */
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em auto; 
+            padding-right: 2.5rem; 
+        }
+
+        .small-input {
+            width: 6rem; 
+        }
+
+
+        /* Estilo para las tarjetas/paneles */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+        }
+
+        .hover-header:hover {
+            background-color: var(--clr-secondary-dark);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+            padding: 0.5rem;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background-color: var(--clr-secondary-dark); 
+            font-weight: 600;
+        }
+        tr:last-child td {
+            border-bottom: none; /* Eliminar borde inferior de la última fila */
+        }
+        /* Estilo para el fondo de las filas de tabla */
+        .table-row-even {
+            background-color: #f8f9fa; /* Gris claro */
+        }
+        .table-row-odd {
+            background-color: #ffffff; /* Blanco */
+        }
+
+        /* responisve table */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr { border: 1px solid #ccc; margin-bottom: 0.5rem; border-radius: 0.5rem; }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-label); /* Usar data-label para mostrar el encabezado */
+                font-weight: bold;
+                text-align: left;
+            }
+        }
+
+        /* dropdown menu styles */
+
+        .dropdown {
+            position: relative; /* Necesario para posicionar el contenido del dropdown */
+            display: inline-block; /* Para que el li no ocupe todo el ancho */
+        }
+
+        .dropdown-content {
+            display: none; /* hidden */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1; 
+            border-radius: 0.25rem;
+            overflow: hidden;
+            top: 100%; 
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: background-color 0.2s ease;
+        }
+
+         .dropdown:hover .dropdown-content {
+            display: block; 
+        }
+
+        .dropdown-content a:hover {
+           background-color: #e2e6ea;
+        }
