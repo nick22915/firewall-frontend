@@ -31,9 +31,9 @@ export const navigationItems: NavItem[] = [
     icon: Settings,
     basePath: '/system',
     subLinks: [
-      { href: '/system/home', label: 'Home', icon: Home },
-      { href: '/system/mail-service', label: 'Mail Service', icon: Mail },
-      { href: '/system/ssh-access', label: 'SSH Access', icon: Terminal },
+      { href: '/', label: 'Home', icon: Home },
+      { href: '/system/mailService', label: 'Mail Service', icon: Mail },
+      { href: '/system/sshaccess', label: 'SSH Access', icon: Terminal },
       { href: '/system/backup', label: 'Backup', icon: Save },
       { href: '/system/gui-settings', label: 'GUI Settings', icon: SlidersHorizontal },
       { href: '/system/system-information', label: 'System Information', icon: Info },

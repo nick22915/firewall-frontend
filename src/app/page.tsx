@@ -10,7 +10,7 @@ export default function HomePage() {
         <h1 className="text-2xl sm:text-5xl font-bold text-primary pl-3">
           Main Page
         </h1>
-        <div className="mb-6">
+        <div className="mb-6 p-5">
                     <table className="min-w-full bg-white rounded-md overflow-hidden">
                         <thead>
                             <tr className="text-white bg-accent">
@@ -22,7 +22,7 @@ export default function HomePage() {
                         <tbody>
                             <tr className="table-row-odd">
                                 <td data-label="Network">
-                                    <span className="inline-block bg-accent text-white px-2 py-1 text-xs font-semibold rounded">INTERNET</span>
+                                    <span className="inline-block bg-redfire text-white px-2 py-1 text-xs font-semibold rounded">INTERNET</span>
                                 </td>
                                 <td data-label="IP address">172.16.90.137</td>
                                 <td data-label="Status">Connected ( 7m 13s )</td>
@@ -39,7 +39,7 @@ export default function HomePage() {
                     </table>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6 p-5">
                     <table className="min-w-full bg-white rounded-md overflow-hidden">
                         <thead>
                             <tr className="bg-accent text-white">
@@ -60,10 +60,12 @@ export default function HomePage() {
                     </table>
                 </div>
 
-                <section className="card p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
-                <h3 className ="font-semibold mb-2">Warning</h3>
-                <p>Please enable the fireinfo service</p>
-            </section>
+                <div className="mb-6 p-5">
+                    <section className="card p-5 bg-yellow-200 border-l-4 border-yellow-500 text-yellow-700">
+                    <h3 className ="font-semibold mb-2">Warning</h3>
+                    <p>Please enable the fireinfo service</p>
+                </section>
+                </div>
       </section>
 
     </div>
