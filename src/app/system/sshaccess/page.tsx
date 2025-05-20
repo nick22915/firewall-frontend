@@ -32,38 +32,38 @@ export default function SshAccess() {
               SSH
             </CardTitle>
             <form>
-              <div className="flex items-center mb-2">
+              <div className="flex items-center gap-1 mb-2">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">SSH Access</label>
               </div>
 
-              <div className="flex items-center mb-2 ml-6">
+              <div className="flex items-center gap-1 mb-2 ml-6">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">
                   Allow SSH Agent Forwarding
                 </label>
               </div>
 
-              <div className="flex items-center mb-2 ml-6">
+              <div className="flex items-center gap-1 mb-2 ml-6">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">Allow TCP forwarding</label>
               </div>
 
-              <div className="flex items-center mb-2 ml-6">
+              <div className="flex items-center gap-1 mb-2 ml-6">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">
                   Allow password based authentication
                 </label>
               </div>
 
-              <div className="flex items-center mb-4 ml-6">
+              <div className="flex items-center gap-1 mb-4 ml-6">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">
                   Allow public key based authentication
                 </label>
               </div>
 
-              <div className="flex items-center mb-6">
+              <div className="flex items-center gap-1 mb-6">
                 <Checkbox></Checkbox>
                 <label className="text-gray-600">
                   Set SSH port to default 22 (222 is used otherwise)
