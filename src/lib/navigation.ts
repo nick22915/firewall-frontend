@@ -47,11 +47,19 @@ export const navigationItems: NavItem[] = [
     icon: Activity,
     basePath: '/status',
     subLinks: [
-      { href: '/status/dashboard', label: 'Dashboard', icon: LayoutDashboard }, // Added a generic dashboard
-      { href: '/status/system-status', label: 'System Status', icon: ServerCog },
-      { href: '/status/service-status', label: 'Service Status', icon: ListChecks },
-      { href: '/status/connection-status', label: 'Connection Status', icon: Wifi },
-      { href: '/status/graphs', label: 'Graphs', icon: BarChart3 }, // Generic graphs
+      { href: '/status/systemStatus', label: 'System Status', icon: ServerCog }, // Added a generic dashboard
+      { href: '/status/system-status', label: 'Memory Status', icon: ServerCog },
+      { href: '/status/service-status', label: 'Services Status', icon: ListChecks },
+      { href: '/status/connection-status', label: 'Media Status', icon: Wifi },
+      { href: '/status/1', label: 'Network (external)', icon: Wifi },
+      { href: '/status/2', label: 'Network (internal)', icon: Wifi },
+      { href: '/status/3', label: 'Network (other)', icon: Wifi },
+      { href: '/status/4', label: 'OpenVPN: Roadwarrior Statistics', icon: ShieldCheck },       
+      { href: '/status/5', label: 'OpenVPN: Net-to-Net Statistics', icon: ShieldCheck },   
+      { href: '/status/6', label: 'Hardware Graphs', icon: BarChart3 },
+      { href: '/status/7', label: 'Connections', icon: Wifi },
+      { href: '/status/8', label: 'Net-Traffic', icon: FileClock },
+      { href: '/status/9', label: 'Mdstat', icon: History },     
     ],
   },
   {
@@ -63,11 +71,11 @@ export const navigationItems: NavItem[] = [
       { href: '/network/dns-server', label: 'Domain Name System', icon: DatabaseZap }, // Changed from DNS
       { href: '/network/web-proxy', label: 'Web Proxy', icon: Router },
       { href: '/network/url-filter', label: 'URL Filter', icon: Filter },
-      { href: '/network/update-accelerator', label: 'Update Accelerator', icon: FastForward },
+      { href: '/network/updateAcelerator', label: 'Update Accelerator', icon: FastForward },
       { href: '/network/dhcp-server', label: 'DHCP Server', icon: Wifi },
-      { href: '/network/captive-portal', label: 'Captive Portal', icon: Users },
-      { href: '/network/connection-scheduler', label: 'Connection Scheduler', icon: CalendarClock },
-      { href: '/network/edit-hosts', label: 'Edit Host', icon: Edit3 },
+      { href: '/network/captivePortal', label: 'Captive Portal', icon: Users },
+      { href: '/network/connectionScheduler', label: 'Connection Scheduler', icon: CalendarClock },
+      { href: '/network/editHost', label: 'Edit Host', icon: Edit3 },
       { href: '/network/dns-forwarding', label: 'DNS Forwarding', icon: GitFork },
       { href: '/network/static-routes', label: 'Static Routes', icon: Route },
       { href: '/network/assign-mac-address', label: 'Assign MAC-Address', icon: Fingerprint },
