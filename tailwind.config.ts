@@ -46,6 +46,14 @@ const config = {
   				DEFAULT: 'hsl(var(--accent))',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
+			  redfire: {
+				DEFAULT: 'hsl(var(--redfire))',
+				foreground: 'hsl(var(--accent-foreground))'
+			},
+			greenfire: {
+				DEFAULT: 'hsl(var(--greenfire))',
+				foreground: 'hsl(var(--accent-foreground))'
+			},
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'

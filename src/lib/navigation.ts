@@ -101,11 +101,11 @@ export const navigationItems: NavItem[] = [
     basePath: '/firewall',
     subLinks: [
       { href: '/firewall/firewall-rules', label: 'Firewall Rules', icon: ListChecks },
-      { href: '/firewall/firewall-groups', label: 'Firewall Groups', icon: Users },
+      { href: '/firewall/firewallGroup', label: 'Firewall Groups', icon: Users },
       { href: '/firewall/firewall-options', label: 'Firewall Options', icon: Settings2 },
       { href: '/firewall/intrusion-prevention', label: 'Intrusion Prevention', icon: ShieldAlert },
       { href: '/firewall/ip-address-blocklist', label: 'IP Address Blocklist', icon: WifiOff },
-      { href: '/firewall/location-block', label: 'Location Block', icon: MapPin },
+      { href: '/firewall/locationBlock', label: 'Location Block', icon: MapPin },
       { href: '/firewall/blue-access', label: 'Blue Access', icon: KeyRound }, // Or Key
       { href: '/firewall/iptables', label: 'IpTables', icon: FileWarning },
     ],
@@ -125,9 +125,9 @@ export const navigationItems: NavItem[] = [
     icon: FileText,
     basePath: '/logs',
     subLinks: [
-      { href: '/logs/log-summary', label: 'Log Summary', icon: History },
-      { href: '/logs/log-settings', label: 'Log Settings', icon: Settings2 },
-      { href: '/logs/proxy-logs', label: 'Proxy Logs', icon: FileText },
+      { href: '/logs/logSummary', label: 'Log Summary', icon: History },
+      { href: '/logs/logSettings', label: 'Log Settings', icon: Settings2 },
+      { href: '/logs/proxyLogs', label: 'Proxy Logs', icon: FileText },
       { href: '/logs/proxy-reports', label: 'Proxy Reports', icon: BarChart3 },
       { href: '/logs/firewall-logs', label: 'Firewall Logs', icon: FileWarning },
       { href: '/logs/fw-loggraphs-ip', label: 'Fw-loggraphs (IP)', icon: BarChart3 },
