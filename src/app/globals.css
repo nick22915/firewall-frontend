@@ -195,6 +195,15 @@ body {
             width: 6rem;
         }
 
+        .status-button-stopped {
+            background-color: #d9534f; 
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+
         /* dropdown menu styles */
 
         .dropdown {

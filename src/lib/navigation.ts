@@ -48,11 +48,11 @@ export const navigationItems: NavItem[] = [
     basePath: '/status',
     subLinks: [
       { href: '/status/systemStatus', label: 'System Status', icon: ServerCog }, // Added a generic dashboard
-      { href: '/status/system-status', label: 'Memory Status', icon: ServerCog },
+      { href: '/status/memoryStatus', label: 'Memory Status', icon: ServerCog },
       { href: '/status/service-status', label: 'Services Status', icon: ListChecks },
       { href: '/status/connection-status', label: 'Media Status', icon: Wifi },
-      { href: '/status/1', label: 'Network (external)', icon: Wifi },
-      { href: '/status/2', label: 'Network (internal)', icon: Wifi },
+      { href: '/status/networkExternal', label: 'Network (external)', icon: Wifi },
+      { href: '/status/networkInternal', label: 'Network (internal)', icon: Wifi },
       { href: '/status/3', label: 'Network (other)', icon: Wifi },
       { href: '/status/4', label: 'OpenVPN: Roadwarrior Statistics', icon: ShieldCheck },       
       { href: '/status/5', label: 'OpenVPN: Net-to-Net Statistics', icon: ShieldCheck },   
@@ -91,7 +91,7 @@ export const navigationItems: NavItem[] = [
       { href: '/services/openvpn', label: 'OpenVPN', icon: ShieldCheck },
       { href: '/services/dynamic-dns', label: 'Dynamic DNS', icon: CloudCog },
       { href: '/services/time-server', label: 'Time Server', icon: FileClock },
-      { href: '/services/quality-of-service', label: 'Quality of Service', icon: Settings2 },
+      { href: '/services/qoServices', label: 'Quality of Service', icon: Settings2 },
       { href: '/services/extrahd', label: 'ExtraHD', icon: Briefcase }, // Assuming ExtraHD is a service/package
     ],
   },
