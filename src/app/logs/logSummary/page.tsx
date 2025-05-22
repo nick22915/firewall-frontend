@@ -133,14 +133,14 @@ export default function LogSummary() {
                     asChild
                     className="bg-accent text-accent-foreground hover:bg-accent/90"
                   >
-                    <a href="/">Save</a>
+                    <a href="/">Update</a>
                   </Button>
                   <Button
                     size="lg"
                     asChild
                     className="bg-accent text-accent-foreground hover:bg-accent/90"
                   >
-                    <a href="/">Save</a>
+                    <a href="/">Export</a>
                   </Button>
 
               </div>

@@ -106,13 +106,13 @@ export const navigationItems: NavItem[] = [
       { href: '/firewall/intrusion-prevention', label: 'Intrusion Prevention', icon: ShieldAlert },
       { href: '/firewall/ip-address-blocklist', label: 'IP Address Blocklist', icon: WifiOff },
       { href: '/firewall/locationBlock', label: 'Location Block', icon: MapPin },
-      { href: '/firewall/blue-access', label: 'Blue Access', icon: KeyRound }, // Or Key
+      { href: '/firewall/blue-access', label: 'Blue Access', icon: KeyRound }, 
       { href: '/firewall/iptables', label: 'IpTables', icon: FileWarning },
     ],
   },
   {
-    label: 'Ipfire', // Assuming this is a specific section like "Pakfire"
-    icon: Package, // Using Package icon for Pakfire
+    label: 'Ipfire',
+    icon: Package, 
     basePath: '/ipfire',
     subLinks: [
       { href: '/ipfire/pakfire', label: 'Pakfire', icon: Package },
@@ -128,14 +128,14 @@ export const navigationItems: NavItem[] = [
       { href: '/logs/logSummary', label: 'Log Summary', icon: History },
       { href: '/logs/logSettings', label: 'Log Settings', icon: Settings2 },
       { href: '/logs/proxyLogs', label: 'Proxy Logs', icon: FileText },
-      { href: '/logs/proxy-reports', label: 'Proxy Reports', icon: BarChart3 },
-      { href: '/logs/firewall-logs', label: 'Firewall Logs', icon: FileWarning },
+      { href: '/logs/proxyReports', label: 'Proxy Reports', icon: BarChart3 },
+      { href: '/logs/firewallLogs', label: 'Firewall Logs', icon: FileWarning },
       { href: '/logs/fw-loggraphs-ip', label: 'Fw-loggraphs (IP)', icon: BarChart3 },
       { href: '/logs/fw-loggraphs-port', label: 'Fw-loggraphs (Port)', icon: BarChart3 },
       { href: '/logs/fw-loggraphs-country', label: 'Fw-loggraphs (Country)', icon: BarChart3 },
-      { href: '/logs/ips-logs', label: 'IPS Logs', icon: ShieldAlert },
-      { href: '/logs/ip-address-blocklist-logs', label: 'IP Address Blocklist Logs', icon: WifiOff },
-      { href: '/logs/openvpn-roadwarrior-logs', label: 'OpenVPN: Roadwarrior Connections Logs', icon: FileText },
+      { href: '/logs/ipsLogs', label: 'IPS Logs', icon: ShieldAlert },
+      { href: '/logs/ipAddressBlockingLogs', label: 'IP Address Blocklist Logs', icon: WifiOff },
+      { href: '/logs/openVpnLogs', label: 'OpenVPN: Roadwarrior Connections Logs', icon: FileText },
       { href: '/logs/url-filter-logs', label: 'URL Filter Logs', icon: Filter },
       { href: '/logs/system-logs', label: 'System Logs', icon: Info },
     ],

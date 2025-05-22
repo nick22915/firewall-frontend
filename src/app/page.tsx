@@ -1,7 +1,7 @@
+import { CardTitle } from "@/components/ui/card";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -12,9 +12,10 @@ export default function HomePage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
       <section className="text-left py-12 bg-card rounded-lg shadow-lg">
-        <h1 className="text-2xl sm:text-5xl font-bold text-primary pl-3">
+        <CardTitle className="text-3xl font-bold text-primary pl-4">
           Main Page
-        </h1>
+        </CardTitle>
+
         <div className="mb-6 p-5">
           <Table className="min-w-full bg-white rounded-md overflow-hidden">
             <TableHeader>
@@ -59,30 +60,32 @@ export default function HomePage() {
         </div>
 
         <div className="mb-6 p-5">
-          <table className="min-w-full bg-white rounded-md overflow-hidden">
-            <thead>
-              <tr className="bg-accent text-white">
-                <th>Network</th>
-                <th>IP address</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="table-row-odd">
-                <td data-label="Network">
+          <Table className="min-w-full bg-white rounded-md overflow-hidden">
+            <TableHeader>
+              <TableRow className="bg-accent ">
+                <TableHead className="w-[100px] text-white ">Network</TableHead>
+                <TableHead className="text-white text-center">
+                  IP Address
+                </TableHead>
+                <TableHead className="text-white text-center">Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell className="font-medium">
                   <span className="inline-block bg-greenfire text-white px-2 py-1 text-xs font-semibold rounded">
                     LAN
                   </span>
-                </td>
-                <td data-label="IP address">192.168.1.1/24</td>
-                <td data-label="Status">Proxy off</td>
-              </tr>
-            </tbody>
-          </table>
+                </TableCell>
+                <TableCell className="text-center">192.168.1.1/24</TableCell>
+                <TableCell className="text-center">Proxy off</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
 
-        <div className="mb-6 p-5">
-          <section className="card p-5 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
+        <div className="mb-2 p-5">
+          <section className="card p-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700">
             <h3 className="font-semibold mb-2">Warning</h3>
             <p>Please enable the fireinfo service</p>
           </section>
