@@ -31,28 +31,28 @@ export default function MailService() {
     
                         <div className="flex items-center mb-4">
                             <label  className="w-1/3 text-gray-600 flex items-center">
-                                Mail Sender <span className="text-red-500 ml-1">*</span>
+                                Mail Sender <span className="text-redfire ml-1">*</span>
                             </label>
                             <Input/>
                         </div>
     
                         <div className="flex items-center mb-4">
                             <label  className="w-1/3 text-gray-600 flex items-center">
-                                Mail Recipient <span className="text-red-500 ml-1">*</span>
-                            </label>
+                                Mail Recipient <span className="text-redfire ml-1">*</span>
+                            </label> 
                             <Input/>
                         </div>
     
                         <div className="flex items-center mb-4">
                             <label  className="w-1/3 text-gray-600 flex items-center">
-                                Mail Server Address <span className="text-red-500 ml-1">*</span>
+                                Mail Server Address <span className="text-redfire ml-1">*</span>
                             </label>
                             <Input/>
                         </div>
     
                         <div className="flex items-center mb-4">
                             <label className="w-1/3 text-gray-600 flex items-center">
-                                Mail Server Port <span className="text-red-500 ml-1">*</span>
+                                Mail Server Port <span className="text-redfire ml-1">*</span>
                             </label>
                             <Input/>
                         </div>

@@ -67,7 +67,7 @@ export const navigationItems: NavItem[] = [
     icon: Network,
     basePath: '/network',
     subLinks: [
-      { href: '/network/zone-configuration', label: 'Zone Configuration', icon: Globe },
+      { href: '/network/zoneConfiguration', label: 'Zone Configuration', icon: Globe },
       { href: '/network/dns-server', label: 'Domain Name System', icon: DatabaseZap }, // Changed from DNS
       { href: '/network/web-proxy', label: 'Web Proxy', icon: Router },
       { href: '/network/url-filter', label: 'URL Filter', icon: Filter },
