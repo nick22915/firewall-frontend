@@ -68,8 +68,8 @@ export const navigationItems: NavItem[] = [
     basePath: '/network',
     subLinks: [
       { href: '/network/zoneConfiguration', label: 'Zone Configuration', icon: Globe },
-      { href: '/network/dns-server', label: 'Domain Name System', icon: DatabaseZap }, // Changed from DNS
-      { href: '/network/web-proxy', label: 'Web Proxy', icon: Router },
+      { href: '/network/domainName', label: 'Domain Name System', icon: DatabaseZap }, // Changed from DNS
+      { href: '/network/webProxy', label: 'Web Proxy', icon: Router },
       { href: '/network/url-filter', label: 'URL Filter', icon: Filter },
       { href: '/network/updateAcelerator', label: 'Update Accelerator', icon: FastForward },
       { href: '/network/dhcp-server', label: 'DHCP Server', icon: Wifi },
@@ -106,7 +106,7 @@ export const navigationItems: NavItem[] = [
       { href: '/firewall/intrusion-prevention', label: 'Intrusion Prevention', icon: ShieldAlert },
       { href: '/firewall/ip-address-blocklist', label: 'IP Address Blocklist', icon: WifiOff },
       { href: '/firewall/locationBlock', label: 'Location Block', icon: MapPin },
-      { href: '/firewall/blue-access', label: 'Blue Access', icon: KeyRound }, 
+      { href: '/firewall/blueAccess', label: 'Blue Access', icon: KeyRound }, 
       { href: '/firewall/iptables', label: 'IpTables', icon: FileWarning },
     ],
   },
@@ -116,8 +116,6 @@ export const navigationItems: NavItem[] = [
     basePath: '/ipfire',
     subLinks: [
       { href: '/ipfire/pakfire', label: 'Pakfire', icon: Package },
-      { href: '/ipfire/updates', label: 'Updates', icon: AlertTriangle },
-      { href: '/ipfire/about', label: 'About IPFire', icon: Info },
     ],
   },
   {

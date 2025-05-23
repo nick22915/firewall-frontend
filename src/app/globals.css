@@ -243,3 +243,16 @@ body {
         .dropdown-content a:hover {
            background-color: #e2e6ea;
         }
+
+        .addon-listbox {
+            height: 150px; /* Altura fija para el listbox */
+            overflow-y: auto; /* Permite el scroll si hay muchos elementos */
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .addon-listbox option {
+            padding: 0.25rem 0.5rem;
+        }
