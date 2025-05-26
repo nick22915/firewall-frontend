@@ -93,7 +93,7 @@ export default function HardwareVulnerabilities() {
             </Table>
           </div>
 
-          <div className="border rounded-md p-4">
+          <div className="border rounded-md p-4 mt-5">
             <CardTitle className="text-2xl font-medium text-primary pb-5">
               Settings
             </CardTitle>

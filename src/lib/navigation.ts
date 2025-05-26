@@ -77,7 +77,7 @@ export const navigationItems: NavItem[] = [
       { href: '/network/connectionScheduler', label: 'Connection Scheduler', icon: CalendarClock },
       { href: '/network/editHost', label: 'Edit Host', icon: Edit3 },
       { href: '/network/dns-forwarding', label: 'DNS Forwarding', icon: GitFork },
-      { href: '/network/static-routes', label: 'Static Routes', icon: Route },
+      { href: '/network/staticRoutes', label: 'Static Routes', icon: Route },
       { href: '/network/assign-mac-address', label: 'Assign MAC-Address', icon: Fingerprint },
       { href: '/network/wake-on-lan', label: 'Wake on Lan', icon: Power },
     ],

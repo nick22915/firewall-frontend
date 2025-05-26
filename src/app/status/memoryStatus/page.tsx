@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ServerCog } from "lucide-react";
-import LinearChart from "@/components/ui/lineChart";
 import DynamicLineChart from "@/components/ui/dynamicLineChart";
+import LoadingComponent from "./loading"
 
 const myMemoryData = [
   {
