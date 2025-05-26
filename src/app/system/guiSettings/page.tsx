@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import LanguageSelect from "@/data/language";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import languageSelect from "@/data/language";
+
 
 export default function GuiSettings() {
   const PageIcon = Mail;
@@ -49,13 +52,18 @@ export default function GuiSettings() {
                 <label className="w-1/3 text-gray-600">
                   Select the language you wish IPFire to display in
                 </label>
-                <select
-                  id="language"
-                  name="language"
-                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-primar text-base py-2 px-3"
-                >
-                  <option value="english">English (English)</option>
-                </select>
+                <Select>
+                  <SelectTrigger className="w-[140px]">
+                    <SelectValue placeholder="Select Year" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {languageSelect.map((language) => (
+                      <SelectItem key={language.id} value={language.language_code}>
+                        {language.language_display}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </form>
           </div>

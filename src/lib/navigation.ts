@@ -70,9 +70,9 @@ export const navigationItems: NavItem[] = [
       { href: '/network/zoneConfiguration', label: 'Zone Configuration', icon: Globe },
       { href: '/network/domainName', label: 'Domain Name System', icon: DatabaseZap }, // Changed from DNS
       { href: '/network/webProxy', label: 'Web Proxy', icon: Router },
-      { href: '/network/url-filter', label: 'URL Filter', icon: Filter },
+      { href: '/network/urlFilter', label: 'URL Filter', icon: Filter },
       { href: '/network/updateAcelerator', label: 'Update Accelerator', icon: FastForward },
-      { href: '/network/dhcp-server', label: 'DHCP Server', icon: Wifi },
+      { href: '/network/dhcpServer', label: 'DHCP Server', icon: Wifi },
       { href: '/network/captivePortal', label: 'Captive Portal', icon: Users },
       { href: '/network/connectionScheduler', label: 'Connection Scheduler', icon: CalendarClock },
       { href: '/network/editHost', label: 'Edit Host', icon: Edit3 },
