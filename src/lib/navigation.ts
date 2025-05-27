@@ -49,7 +49,7 @@ export const navigationItems: NavItem[] = [
     subLinks: [
       { href: '/status/systemStatus', label: 'System Status', icon: ServerCog }, // Added a generic dashboard
       { href: '/status/memoryStatus', label: 'Memory Status', icon: ServerCog },
-      { href: '/status/service-status', label: 'Services Status', icon: ListChecks },
+      { href: '/status/servicesStatus', label: 'Services Status', icon: ListChecks },
       { href: '/status/connection-status', label: 'Media Status', icon: Wifi },
       { href: '/status/networkExternal', label: 'Network (external)', icon: Wifi },
       { href: '/status/networkInternal', label: 'Network (internal)', icon: Wifi },
@@ -78,8 +78,8 @@ export const navigationItems: NavItem[] = [
       { href: '/network/editHost', label: 'Edit Host', icon: Edit3 },
       { href: '/network/dns-forwarding', label: 'DNS Forwarding', icon: GitFork },
       { href: '/network/staticRoutes', label: 'Static Routes', icon: Route },
-      { href: '/network/assign-mac-address', label: 'Assign MAC-Address', icon: Fingerprint },
-      { href: '/network/wake-on-lan', label: 'Wake on Lan', icon: Power },
+      { href: '/network/assignAddress', label: 'Assign MAC-Address', icon: Fingerprint },
+      { href: '/network/wakeonLan', label: 'Wake on Lan', icon: Power },
     ],
   },
   {
@@ -89,7 +89,7 @@ export const navigationItems: NavItem[] = [
     subLinks: [
       { href: '/services/ipsec', label: 'IPsec', icon: Lock },
       { href: '/services/openvpn', label: 'OpenVPN', icon: ShieldCheck },
-      { href: '/services/dynamic-dns', label: 'Dynamic DNS', icon: CloudCog },
+      { href: '/services/dynamicDns', label: 'Dynamic DNS', icon: CloudCog },
       { href: '/services/time-server', label: 'Time Server', icon: FileClock },
       { href: '/services/qoServices', label: 'Quality of Service', icon: Settings2 },
       { href: '/services/extrahd', label: 'ExtraHD', icon: Briefcase }, // Assuming ExtraHD is a service/package
