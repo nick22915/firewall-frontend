@@ -256,3 +256,43 @@ body {
         .addon-listbox option {
             padding: 0.25rem 0.5rem;
         }
+
+        .openvpn-status-bar {
+            @apply flex justify-between items-center bg-accent rounded-md overflow-hidden;
+        }
+        .openvpn-status-label {
+            @apply px-4 py-2 text-lg font-semibold text-white;
+        }
+        .openvpn-status-stopped {
+            @apply px-4 py-2 text-white font-semibold mr-3;
+        }
+        .openvpn-status-running {
+            @apply px-4 py-2 text-white font-semibold;
+        }
+        .status-button-stopped {
+            @apply px-4 py-2 bg-redfire text-white font-semibold rounded-md;
+        }
+
+        .firewall-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        .firewall-table td {
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .firewall-policy-bar {
+            @apply flex items-center justify-between mt-4;
+        }
+        .firewall-policy-green {
+            @apply bg-greenfire text-white font-semibold py-2 px-4 rounded-l-md;
+        }
+        .firewall-policy-red {
+            @apply bg-redfire text-white font-semibold py-2 px-4 rounded-r-md;
+        }
+        .firewall-policy-label {
+            @apply bg-accent text-white font-semibold py-2 px-4 w-full text-center rounded-b-md;
+        }

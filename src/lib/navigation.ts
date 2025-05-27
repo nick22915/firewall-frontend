@@ -87,12 +87,12 @@ export const navigationItems: NavItem[] = [
     icon: Server,
     basePath: '/services',
     subLinks: [
-      { href: '/services/ipsec', label: 'IPsec', icon: Lock },
-      { href: '/services/openvpn', label: 'OpenVPN', icon: ShieldCheck },
+      { href: '/services/ipSec', label: 'IPsec', icon: Lock },
+      { href: '/services/openVpn', label: 'OpenVPN', icon: ShieldCheck },
       { href: '/services/dynamicDns', label: 'Dynamic DNS', icon: CloudCog },
-      { href: '/services/time-server', label: 'Time Server', icon: FileClock },
+      { href: '/services/timeServer', label: 'Time Server', icon: FileClock },
       { href: '/services/qoServices', label: 'Quality of Service', icon: Settings2 },
-      { href: '/services/extrahd', label: 'ExtraHD', icon: Briefcase }, // Assuming ExtraHD is a service/package
+      { href: '/services/extraHd', label: 'ExtraHD', icon: Briefcase }, // Assuming ExtraHD is a service/package
     ],
   },
   {
@@ -100,10 +100,10 @@ export const navigationItems: NavItem[] = [
     icon: Shield,
     basePath: '/firewall',
     subLinks: [
-      { href: '/firewall/firewall-rules', label: 'Firewall Rules', icon: ListChecks },
+      { href: '/firewall/firewallRules', label: 'Firewall Rules', icon: ListChecks },
       { href: '/firewall/firewallGroup', label: 'Firewall Groups', icon: Users },
-      { href: '/firewall/firewall-options', label: 'Firewall Options', icon: Settings2 },
-      { href: '/firewall/intrusion-prevention', label: 'Intrusion Prevention', icon: ShieldAlert },
+      { href: '/firewall/firewallOption', label: 'Firewall Options', icon: Settings2 },
+      { href: '/firewall/intrusionPrevention', label: 'Intrusion Prevention', icon: ShieldAlert },
       { href: '/firewall/ip-address-blocklist', label: 'IP Address Blocklist', icon: WifiOff },
       { href: '/firewall/locationBlock', label: 'Location Block', icon: MapPin },
       { href: '/firewall/blueAccess', label: 'Blue Access', icon: KeyRound }, 
