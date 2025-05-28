@@ -6,11 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export default function SshAccess() {
-  const PageIcon = Mail;
+  const PageIcon = Terminal;
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">

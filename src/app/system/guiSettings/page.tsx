@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { SlidersHorizontal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
-import LanguageSelect from "@/data/language";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import languageSelect from "@/data/language";
 
 
 export default function GuiSettings() {
-  const PageIcon = Mail;
+  const PageIcon = SlidersHorizontal;
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -54,7 +53,7 @@ export default function GuiSettings() {
                 </label>
                 <Select>
                   <SelectTrigger className="w-[140px]">
-                    <SelectValue placeholder="Select Year" />
+                    <SelectValue placeholder="Select Language" />
                   </SelectTrigger>
                   <SelectContent>
                     {languageSelect.map((language) => (

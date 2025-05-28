@@ -74,7 +74,7 @@ export default function OpenVpn() {
                   <label className="w-1/2 text-sm font-medium text-gray-600">
                     OpenVPN subnet:
                   </label>
-                  <Input value={"10.86.198.0/255.255.255.0"} />
+                  <Input />
                 </div>
                 <div className="flex items-center justify-between">
                   <label className="w-1/2 text-sm font-medium text-gray-600">
