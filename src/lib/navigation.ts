@@ -135,7 +135,7 @@ export const navigationItems: NavItem[] = [
       { href: '/logs/ipAddressBlockingLogs', label: 'IP Address Blocklist Logs', icon: WifiOff },
       { href: '/logs/openVpnLogs', label: 'OpenVPN: Roadwarrior Connections Logs', icon: FileText },
       { href: '/logs/url-filter-logs', label: 'URL Filter Logs', icon: Filter },
-      { href: '/logs/system-logs', label: 'System Logs', icon: Info },
+      { href: '/logs/systemLogs', label: 'System Logs', icon: Info },
     ],
   },
 ];

@@ -62,11 +62,11 @@ export default function SshAccess() {
                 </label>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center justify-around gap-1">
-                    <Input type="radio" />
+                    <Input type="radio" className="h-4 w-4"/>
                     <label className="text-gray-600">Reconnect</label>
                   </div>
 
-                  <Input type="radio" />
+                  <Input type="radio" className="h-4 w-4"/>
                   <label className="text-gray-600 mr-2">
                     Change to profile:
                   </label>
@@ -89,7 +89,7 @@ export default function SshAccess() {
                 </label>
                 <div className="">
                   <div className="flex items-center justify-between gap-1">
-                    <Input type="radio" />
+                    <Input type="radio" className="h-4 w-4"/>
                     <label className="text-gray-600">1 - 31</label>
                   </div>
                   <div>

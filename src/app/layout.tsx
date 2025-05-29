@@ -11,7 +11,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: 'Firewall Dashboard',
-  description: 'Responsive Firewall Dashboard with monitoring, graphs and settings features',
+  description: 'Firewall Dashboard for managing and monitoring network traffic',
 };
 
 export default function RootLayout({
