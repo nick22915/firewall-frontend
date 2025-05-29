@@ -88,7 +88,7 @@ export function Header() {
   };
 
   const handleNavigationClick = () => {
-    setIsLoading(true); 
+    setIsLoading(true); // Activa el loader inmediatamente
 
     setTimeout(() => {
       setIsLoading(false); 
