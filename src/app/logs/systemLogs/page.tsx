@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/table";
 import systemLogsData from "@/data/systemLogs";
 
-export default function SshAccess() {
+export default function systemLogs() {
   const PageIcon = Info;
   const date = new Date();
   const currentYear = date.getFullYear();

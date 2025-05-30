@@ -92,7 +92,7 @@ export function Header() {
 
     setTimeout(() => {
       setIsLoading(false); 
-    }, 3000);
+    }, 2000);
   };
 
   const desktopNav = (

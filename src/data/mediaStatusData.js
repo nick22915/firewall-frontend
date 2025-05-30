@@ -56,3 +56,170 @@ export const mediaStatusChartData = [
     { "time": "21:14", "bytes_read": 1100, "bytes_written": -27000 },
     { "time": "21:15", "bytes_read": 1300, "bytes_written": -40000 }
   ]
+
+  export const diskUsageData = [
+    {
+      "id": 1,
+      "Device": "devtmpfs",
+      "Mounted_on": "/dev",
+      "Size": "1154M",
+      "Used": "1M",
+      "Free": "1154M",
+      "Percentage": "1%"
+    },
+    {
+      "id": 2,
+      "Device": "tmpfs",
+      "Mounted_on": "/dev/shm",
+      "Size": "1187M",
+      "Used": "0M",
+      "Free": "1187M",
+      "Percentage": "0%"
+    },
+    {
+      "id": 3,
+      "Device": "tmpfs",
+      "Mounted_on": "/run",
+      "Size": "1187M",
+      "Used": "1M",
+      "Free": "1187M",
+      "Percentage": "1%"
+    },
+    {
+      "id": 4,
+      "Device": "/dev/sda4",
+      "Mounted_on": "/",
+      "Size": "6847M",
+      "Used": "2642M",
+      "Free": "3837M",
+      "Percentage": "41%"
+    },
+    {
+      "id": 5,
+      "Device": "/dev/sda1",
+      "Mounted_on": "/boot",
+      "Size": "488M",
+      "Used": "86M",
+      "Free": "367M",
+      "Percentage": "19%"
+    },
+    {
+      "id": 6,
+      "Device": "/dev/sda2",
+      "Mounted_on": "/boot/efi",
+      "Size": "32M",
+      "Used": "1M",
+      "Free": "32M",
+      "Percentage": "1%"
+    },
+    {
+      "id": 7,
+      "Device": "/var/lock",
+      "Mounted_on": "/var/lock",
+      "Size": "8M",
+      "Used": "1M",
+      "Free": "8M",
+      "Percentage": "1%"
+    }
+  ]
+
+  export const indexNodeData = [
+    {
+      "id": 1,
+      "Device": "devtmpfs",
+      "Mounted_on": "/dev",
+      "Size": "295170",
+      "Used": "414",
+      "Free": "294756",
+      "Percentage": "1%"
+    },
+    {
+      "id": 2,
+      "Device": "tmpfs",
+      "Mounted_on": "/dev/shm",
+      "Size": "303786",
+      "Used": "1",
+      "Free": "303785",
+      "Percentage": "1%"
+    },
+    {
+      "id": 3,
+      "Device": "tmpfs",
+      "Mounted_on": "/run",
+      "Size": "303786",
+      "Used": "476",
+      "Free": "303310",
+      "Percentage": "1%"
+    },
+    {
+      "id": 4,
+      "Device": "/dev/sda4",
+      "Mounted_on": "/",
+      "Size": "451584",
+      "Used": "26734",
+      "Free": "424850",
+      "Percentage": "6%"
+    },
+    {
+      "id": 5,
+      "Device": "/dev/sda1",
+      "Mounted_on": "/boot",
+      "Size": "32768",
+      "Used": "589",
+      "Free": "32179",
+      "Percentage": "2%"
+    },
+    {
+      "id": 6,
+      "Device": "/dev/sda2",
+      "Mounted_on": "/boot/efi",
+      "Size": "0",
+      "Used": "0",
+      "Free": "0",
+      "Percentage": "-"
+    },
+    {
+      "id": 7,
+      "Device": "/var/lock",
+      "Mounted_on": "/var/lock",
+      "Size": "303786",
+      "Used": "7",
+      "Free": "303779",
+      "Percentage": "1%"
+    }
+  ]
+
+  export const transferData = [
+  {
+    "id": 1,
+    "Device": "sda",
+    "MB_read": 738,
+    "MB_written": 578
+  },
+  {
+    "id": 2,
+    "Device": "sda1",
+    "MB_read": 13,
+    "MB_written": 0
+  },
+  {
+    "id": 3,
+    "Device": "sda2",
+    "MB_read": 1,
+    "MB_written": 0
+  },
+  {
+    "id": 4,
+    "Device": "sda3",
+    "MB_read": 3,
+    "MB_written": 0
+  },
+  {
+    "id": 5,
+    "Device": "sda4",
+    "MB_read": 717,
+    "MB_written": 577
+  }
+]
+
+  

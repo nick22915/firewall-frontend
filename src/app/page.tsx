@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
       <section className="text-left py-12 bg-card rounded-lg shadow-lg">

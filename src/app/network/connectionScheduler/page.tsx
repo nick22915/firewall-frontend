@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 
-export default function SshAccess() {
+export default function ConnectionScheduler() {
   const PageIcon = CalendarClock;
 
   return (

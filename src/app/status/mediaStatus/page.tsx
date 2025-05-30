@@ -7,9 +7,23 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Wifi } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import DynamicLineChart from "@/components/ui/dynamicLineChart";
-import { mediaStatusChartData } from "@/data/mediaStatusData";
+import {
+  mediaStatusChartData,
+  indexNodeData,
+  diskUsageData,
+  transferData
+} from "@/data/mediaStatusData";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableCaption,
+  TableHeader,
+  TableRow,
+  TableFooter,
+  TableHead,
+} from "@/components/ui/table";
 
 export default function MediaStatus() {
   const PageIcon = Wifi;
@@ -42,6 +56,156 @@ export default function MediaStatus() {
                 domain={[0, 100]}
                 yAxisLabel="Percentage"
               />
+            </div>
+          </div>
+
+          <div className="border rounded-md p-4 mt-5">
+            <CardTitle className="text-2xl font-medium text-primary pb-5">
+              Disk Usage
+            </CardTitle>
+            <div>
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-accent text-white">
+                    <TableHead className="w-[200px] text-white">
+                      Device
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Mounted on
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Size
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Used
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Free
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Percentage
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {diskUsageData.map((diskUsageData) => (
+                    <TableRow key={diskUsageData.id}>
+                      <TableCell className="w-[200px]">
+                        {diskUsageData.Device}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {diskUsageData.Mounted_on}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {diskUsageData.Size}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {diskUsageData.Used}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {diskUsageData.Free}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {diskUsageData.Percentage}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+
+          <div className="border rounded-md p-4 mt-5">
+            <CardTitle className="text-2xl font-medium text-primary pb-5">
+              Index-Nodes
+            </CardTitle>
+            <div>
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-accent text-white">
+                    <TableHead className="w-[200px] text-white">
+                      Device
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Mounted on
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Size
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Used
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Free
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      Percentage
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {indexNodeData.map((indexNodeData) => (
+                    <TableRow key={indexNodeData.id}>
+                      <TableCell className="w-[200px]">
+                        {indexNodeData.Device}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {indexNodeData.Mounted_on}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {indexNodeData.Size}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {indexNodeData.Used}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {indexNodeData.Free}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {indexNodeData.Percentage}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+
+          <div className="border rounded-md p-4 mt-5">
+            <CardTitle className="text-2xl font-medium text-primary pb-5">
+              Transfers
+            </CardTitle>
+            <div>
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-accent text-white">
+                    <TableHead className="w-[200px] text-white">
+                      Device
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      MB read
+                    </TableHead>
+                    <TableHead className="text-white text-right">
+                      MB written
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {transferData.map((transferData) => (
+                    <TableRow key={transferData.id}>
+                      <TableCell className="w-[200px]">
+                        {transferData.Device}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {transferData.MB_read}
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {transferData.MB_written}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
             </div>
           </div>
         </CardContent>
