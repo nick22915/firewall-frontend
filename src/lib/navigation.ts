@@ -53,7 +53,7 @@ export const navigationItems: NavItem[] = [
       { href: '/status/mediaStatus', label: 'Media Status', icon: Wifi },
       { href: '/status/networkExternal', label: 'Network (external)', icon: Wifi },
       { href: '/status/networkInternal', label: 'Network (internal)', icon: Wifi },
-      { href: '/status/3', label: 'Network (other)', icon: Wifi },
+      { href: '/status/networkOther', label: 'Network (other)', icon: Wifi },
       { href: '/status/4', label: 'OpenVPN: Roadwarrior Statistics', icon: ShieldCheck },       
       { href: '/status/5', label: 'OpenVPN: Net-to-Net Statistics', icon: ShieldCheck },   
       { href: '/status/hardwareGraphs', label: 'Hardware Graphs', icon: BarChart3 },

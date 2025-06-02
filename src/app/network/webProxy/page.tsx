@@ -17,6 +17,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { DownloadThrottlingSelect, LimitPerHost } from "@/data/webProxyData";
+import { selectHour } from "@/data/selectDate";
 
 export default function WebProxy() {
   const PageIcon = Router;
@@ -293,6 +295,8 @@ export default function WebProxy() {
                         <SelectItem value="16">16</SelectItem>
                         <SelectItem value="32">32</SelectItem>
                         <SelectItem value="64">64</SelectItem>
+                        <SelectItem value="128">128</SelectItem>
+                        <SelectItem value="256">256</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -315,7 +319,9 @@ export default function WebProxy() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="lru">LRU</SelectItem>
-                        <SelectItem value="lfu">LFU</SelectItem>
+                        <SelectItem value="lfuda">HEAP LFUDA</SelectItem>
+                        <SelectItem value="gdsf">HEAP GDSF</SelectItem>
+                        <SelectItem value="heapLru">HEAP LRU</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -329,7 +335,9 @@ export default function WebProxy() {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="lru">LRU</SelectItem>
-                        <SelectItem value="lfu">LFU</SelectItem>
+                        <SelectItem value="lfuda">HEAP LFUDA</SelectItem>
+                        <SelectItem value="gdsf">HEAP GDSF</SelectItem>
+                        <SelectItem value="heapLru">HEAP LRU</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -486,10 +494,14 @@ export default function WebProxy() {
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="00">00</SelectItem>
-                      <SelectItem value="deny">Deny</SelectItem>
+                      {selectHour.map((option) => (
+                        <SelectItem key={option.id} value={option.value}>
+                          {option.name}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
+
                   <span>:</span>
                   <Select>
                     <SelectTrigger className="w-[90px]">
@@ -497,19 +509,26 @@ export default function WebProxy() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="00">00</SelectItem>
-                      <SelectItem value="deny">Deny</SelectItem>
+                      <SelectItem value="15">15</SelectItem>
+                      <SelectItem value="30">30</SelectItem>
+                      <SelectItem value="45">45</SelectItem>
                     </SelectContent>
                   </Select>
+
                   <label className="text-gray-600 ml-4">To</label>
                   <Select>
                     <SelectTrigger className="w-[90px]">
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="24">24</SelectItem>
-                      <SelectItem value="deny">Deny</SelectItem>
+                      {selectHour.map((option) => (
+                        <SelectItem key={option.id} value={option.value}>
+                          {option.name}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
+
                   <span>:</span>
                   <Select>
                     <SelectTrigger className="w-[90px]">
@@ -517,7 +536,9 @@ export default function WebProxy() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="00">00</SelectItem>
-                      <SelectItem value="deny">Deny</SelectItem>
+                      <SelectItem value="15">15</SelectItem>
+                      <SelectItem value="30">30</SelectItem>
+                      <SelectItem value="45">45</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -546,7 +567,7 @@ export default function WebProxy() {
               </div>
               <div>
                 <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
-                  Transfer Limits
+                  Download throttling
                 </h3>
                 <div className="border-b border-gray-300 mb-6"></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -563,7 +584,11 @@ export default function WebProxy() {
                         <SelectValue placeholder="Select" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="unlimited">Unlimited</SelectItem>
+                        {DownloadThrottlingSelect.map((option) => (
+                          <SelectItem key={option.id} value={option.value}>
+                            {option.text}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
@@ -572,7 +597,11 @@ export default function WebProxy() {
                       <SelectValue placeholder="Select" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="unlimited">Unlimited</SelectItem>
+                      {LimitPerHost.map((option) => (
+                        <SelectItem key={option.id} value={option.value}>
+                          {option.text}
+                        </SelectItem>
+                      ))}
                     </SelectContent>
                   </Select>
                 </div>

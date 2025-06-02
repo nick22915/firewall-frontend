@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Delete, Edit, ShieldAlert } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -20,10 +19,12 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import ProviderSettings from "@/components/global/providerSettings";
 
 export default function IntrusionPrevention() {
   const PageIcon = ShieldAlert;
   const [hostList, setHostlist] = useState<any[]>([]);
+  const [visibleSection, setVisibleSection] = useState("mainSection");
   const [formData, setFormData] = useState({
     ipProvider: "",
     remark: "",
@@ -60,106 +61,114 @@ export default function IntrusionPrevention() {
           </div>
         </CardHeader>
         <CardContent className="p-6">
-          <div className="border rounded-md p-4">
-            <div className="openvpn-status-bar mb-6">
-              <span className="openvpn-status-label">
-                Intrusion Prevention System
-              </span>
-              <span className="openvpn-status-stopped">STOPPED</span>
-            </div>
+          {visibleSection === "mainSection" && (
+            <div>
+              <div className="border rounded-md p-4">
+                <div className="openvpn-status-bar mb-6">
+                  <span className="openvpn-status-label">
+                    Intrusion Prevention System
+                  </span>
+                  <span className="openvpn-status-stopped">STOPPED</span>
+                </div>
 
-            <CardTitle className="text-2xl font-medium text-primary pb-5">
-              Rulesets
-            </CardTitle>
+                <CardTitle className="text-2xl font-medium text-primary pb-5">
+                  Rulesets
+                </CardTitle>
 
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-accent text-white">
-                  <TableHead className="w-[100px] text-white">
-                    Povider
-                  </TableHead>
-                  <TableHead className="text-white text-center">
-                    Last Update
-                  </TableHead>
-                  <TableHead className="text-right text-white">
-                    Automatic Updates
-                  </TableHead>
-                  <TableHead className="text-right text-white">
-                    Action
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody></TableBody>
-            </Table>
-            <div className="flex justify-end gap-3 mt-5">
-              <Button
-                size="lg"
-                type="submit"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                Add Provider
-              </Button>
-            </div>
-          </div>
-
-          <div className="border rounded-md p-4 mt-5">
-            <CardTitle className="text-2xl font-medium text-primary pb-5">
-              Whitelisted Hosts
-            </CardTitle>
-            <form onSubmit={handleAddDevice}>
-              <Table>
-                <TableHeader>
-                  <TableRow className="bg-accent text-white">
-                    <TableHead className="text-center text-white">
-                      IP Provider
-                    </TableHead>
-                    <TableHead className="text-white text-center">
-                      Remark
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {hostList.map((host, index) => (
-                    <TableRow key={index}>
-                      <TableCell className="text-center">
-                        {host.ipProvider}
-                      </TableCell>
-                      <TableCell className="text-center">
-                        {host.remark}
-                      </TableCell>
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-accent text-white">
+                      <TableHead className="w-[100px] text-white">
+                        Povider
+                      </TableHead>
+                      <TableHead className="text-white text-center">
+                        Last Update
+                      </TableHead>
+                      <TableHead className="text-right text-white">
+                        Automatic Updates
+                      </TableHead>
+                      <TableHead className="text-right text-white">
+                        Action
+                      </TableHead>
                     </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-              <div className="flex items-center justify-end mt-10 mb-3">
-                <label className="text-gray-600 mr-2">IP Address</label>
-                <Input
-                  name="ipProvider"
-                  value={formData.ipProvider}
-                  onChange={handleInputChange}
-                  required
-                />
+                  </TableHeader>
+                  <TableBody></TableBody>
+                </Table>
+                <div className="flex justify-end gap-3 mt-5">
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                    onClick={() => setVisibleSection("addProvider")}
+                  >
+                    Add Provider
+                  </Button>
+                </div>
               </div>
-              <div className="flex items-center justify-end gap-4 mb-3">
-                <label className="text-gray-600 mr-2">Remark</label>
-                <Input
-                  name="remark"
-                  value={formData.remark}
-                  onChange={handleInputChange}
-                  required
-                />
+
+              <div className="border rounded-md p-4 mt-5">
+                <CardTitle className="text-2xl font-medium text-primary pb-5">
+                  Whitelisted Hosts
+                </CardTitle>
+                <form onSubmit={handleAddDevice}>
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-accent text-white">
+                        <TableHead className="text-center text-white">
+                          IP Provider
+                        </TableHead>
+                        <TableHead className="text-white text-center">
+                          Remark
+                        </TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {hostList.map((host, index) => (
+                        <TableRow key={index}>
+                          <TableCell className="text-center">
+                            {host.ipProvider}
+                          </TableCell>
+                          <TableCell className="text-center">
+                            {host.remark}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                  <div className="flex items-center justify-end mt-10 mb-3">
+                    <label className="text-gray-600 mr-2">IP Address</label>
+                    <Input
+                      name="ipProvider"
+                      value={formData.ipProvider}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="flex items-center justify-end gap-4 mb-3">
+                    <label className="text-gray-600 mr-2">Remark</label>
+                    <Input
+                      name="remark"
+                      value={formData.remark}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="flex justify-end gap-3 mt-5">
+                    <Button
+                      size="lg"
+                      type="submit"
+                      className="bg-accent text-accent-foreground hover:bg-accent/90"
+                    >
+                      Add
+                    </Button>
+                  </div>
+                </form>
               </div>
-              <div className="flex justify-end gap-3 mt-5">
-                <Button
-                  size="lg"
-                  type="submit"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90"
-                >
-                  Add
-                </Button>
-              </div>
-            </form>
-          </div>
+            </div>
+          )}
+
+          {visibleSection === "addProvider" && <ProviderSettings />}
+          
         </CardContent>
       </Card>
     </div>

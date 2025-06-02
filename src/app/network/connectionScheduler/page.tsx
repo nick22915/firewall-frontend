@@ -10,6 +10,45 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { selectHour, selectDay } from "@/data/selectDate";
+
+const selectAction = [
+  {
+    id: "1",
+    text: "Reconnect",
+    value: "Reconnect",
+  },
+  {
+    id: "2",
+    text: "Connect",
+    value: "Connect",
+  },
+  {
+    id: "3",
+    text: "Disconnect",
+    value: "Disconnect",
+  },
+  {
+    id: "4",
+    text: "Reboot",
+    value: "Reboot",
+  },
+  {
+    id: "5",
+    text: "Shutdown",
+    value: "Shutdown",
+  },
+  {
+    id: "6",
+    text: "IPsec (re)start",
+    value: "IPsec (re)start",
+  },
+  {
+    id: "7",
+    text: "IPsec stop",
+    value: "IPsec stop",
+  },
+];
 
 export default function ConnectionScheduler() {
   const PageIcon = CalendarClock;
@@ -38,21 +77,32 @@ export default function ConnectionScheduler() {
                   Time: <span className="text-redfire ml-1">*</span>
                 </label>
                 <div className="flex items-center gap-2">
-                  <select
-                    id="action-time-hour"
-                    name="action-time-hour"
-                    className="styled-select w-auto"
-                  >
-                    <option value="00">00</option>
-                  </select>
+                  <Select>
+                    <SelectTrigger className="w-[90px]">
+                      <SelectValue placeholder="Select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {selectHour.map((option) => (
+                        <SelectItem key={option.id} value={option.value}>
+                          {option.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <span>:</span>
-                  <select
-                    id="action-time-minute"
-                    name="action-time-minute"
-                    className="styled-select w-auto"
-                  >
-                    <option value="00">00</option>
-                  </select>
+
+                  <Select>
+                    <SelectTrigger className="w-[90px]">
+                      <SelectValue placeholder="Select" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {selectHour.map((option) => (
+                        <SelectItem key={option.id} value={option.value}>
+                          {option.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
@@ -62,11 +112,22 @@ export default function ConnectionScheduler() {
                 </label>
                 <div className="flex items-center gap-4">
                   <div className="flex items-center justify-around gap-1">
-                    <Input type="radio" className="h-4 w-4"/>
-                    <label className="text-gray-600">Reconnect</label>
+                    <Input type="radio" className="h-4 w-4" />
+                    <Select>
+                      <SelectTrigger className="w-[90px]">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {selectAction.map((option) => (
+                          <SelectItem key={option.id} value={option.value}>
+                            {option.text}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
 
-                  <Input type="radio" className="h-4 w-4"/>
+                  <Input type="radio" className="h-4 w-4" />
                   <label className="text-gray-600 mr-2">
                     Change to profile:
                   </label>
@@ -87,13 +148,40 @@ export default function ConnectionScheduler() {
                 <label className="w-1/3 text-gray-600 flex items-center mt-1">
                   Days: <span className="text-redfire ml-1">*</span>
                 </label>
-                <div className="">
-                  <div className="flex items-center justify-between gap-1">
-                    <Input type="radio" className="h-4 w-4"/>
-                    <label className="text-gray-600">1 - 31</label>
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <Input type="radio" className="h-4 w-4" />
+                    <Select>
+                      <SelectTrigger className="w-[90px]">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {selectDay.map((option) => (
+                          <SelectItem key={option.id} value={option.value}>
+                            {option.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+
+                    <Select>
+                      <SelectTrigger className="w-[90px]">
+                        <SelectValue placeholder="Select" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {selectDay.map((option) => (
+                          <SelectItem key={option.id} value={option.value}>
+                            {option.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                   </div>
                   <div>
-                    <label className="text-gray-600">Days of the week:</label>
+                  <div className="flex items-center gap-4">
+                  <Input type="radio" className="h-4 w-4" />
+                  <label className="text-gray-600">Days of the week:</label>
+                  </div>
                     <div className="ml-6 mt-2 grid grid-cols-2 gap-2">
                       <div className="flex items-center gap-1">
                         <Checkbox />
