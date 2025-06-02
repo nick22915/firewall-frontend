@@ -1,4 +1,4 @@
-import { CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
   TableBody,
@@ -7,16 +7,23 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Menu } from "lucide-react"
 
 export default async function HomePage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
-      <section className="text-left py-12 bg-card rounded-lg shadow-lg">
-        <CardTitle className="text-3xl font-bold text-primary pl-4">
-          Main Page
-        </CardTitle>
-
-        <div className="mb-6 p-5">
+      <Card className="shadow-lg">
+      <CardHeader className="bg-muted/50 p-6 rounded-t-lg">
+          <div className="flex items-center gap-3">
+            <Menu className="h-8 w-8 text-primary" />
+            <div>
+              <CardTitle className="text-3xl font-bold text-primary">
+                Main Page
+              </CardTitle>
+            </div>
+          </div>
+        </CardHeader>
+        <div className="mb-6 p-5 mt-5">
           <Table className="min-w-full bg-white rounded-md overflow-hidden">
             <TableHeader>
               <TableRow className="bg-accent ">
@@ -90,7 +97,8 @@ export default async function HomePage() {
             <p>Please enable the fireinfo service</p>
           </section>
         </div>
-      </section>
+      
+      </Card>
     </div>
   );
 }

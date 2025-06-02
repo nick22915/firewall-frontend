@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileWarning, ArrowLeft, ArrowRight } from "lucide-react";
@@ -19,6 +21,7 @@ import {
 } from "@/components/ui/table";
 import firewallLogs from "@/data/firewallLogs";
 import { selectMonth, selectDay } from "@/data/selectDate";
+import { useRouter } from "next/navigation";
 
 export default function FirewallLogs() {
   const PageIcon = FileWarning;
@@ -27,6 +30,15 @@ export default function FirewallLogs() {
   const currentMonth = date.toLocaleString("default", { month: "long" });
   const currentDay = date.getDate();
   // should be updated when change the date filter
+
+  const router = useRouter(); // Hook para redireccionar
+
+  const handleSourceClick = (source: string, country: string) => {
+    // Redirigir a otra página con el parámetro `source`
+    router.push(
+      `/detail/ipInformationDetail?source=${source}&country=${country}`
+    );
+  };
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -112,8 +124,8 @@ export default function FirewallLogs() {
               Log
             </CardTitle>
             <p className="text-gray-600 mb-4 ">
-              Total number of firewall hits for {currentMonth} {currentDay}, {currentYear}:{" "}
-              {firewallLogs.length}
+              Total number of firewall hits for {currentMonth} {currentDay},{" "}
+              {currentYear}: {firewallLogs.length}
             </p>
             <Table>
               <TableCaption>Logs List.</TableCaption>
@@ -144,7 +156,13 @@ export default function FirewallLogs() {
                     <TableCell>{log.Chain}</TableCell>
                     <TableCell>{log.Iface}</TableCell>
                     <TableCell className="text-right">{log.Proto}</TableCell>
-                    <TableCell className="text-right">{log.Source}</TableCell>
+                    <TableCell
+                      className="text-right text-redfire hover:text-redfire/60 cursor-pointer"
+                      onClick={() => handleSourceClick(log.Source, log.Country)}
+                    >
+                      {" "}
+                      {log.Source}
+                    </TableCell>
                     <TableCell className="text-right">
                       {log["Src Port"]}
                     </TableCell>
