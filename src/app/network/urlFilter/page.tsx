@@ -199,7 +199,7 @@ export default function UrlFilter() {
                   type="submit"
                   className="bg-accent text-accent-foreground hover:bg-accent/90"
                 >
-                  Manage Repository
+                 <a href="/network/urlFilter/manageRepository">Manage Repository</a> 
                 </Button>
               </div>
 
@@ -238,7 +238,7 @@ export default function UrlFilter() {
                   type="submit"
                   className="bg-accent text-accent-foreground hover:bg-accent/90"
                 >
-                  Set User Quota
+                  <a href="/network/urlFilter/quotaRule">Set User Quota</a> 
                 </Button>
               </div>
               <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
@@ -513,7 +513,7 @@ export default function UrlFilter() {
                 type="submit"
                 className="bg-accent text-accent-foreground hover:bg-accent/90"
               >
-                Blacklist Editor
+                <a href="/network/urlFilter/blacklistEditor">Blacklist Editor</a> 
               </Button>
             </div>
             <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
