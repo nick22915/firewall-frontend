@@ -24,6 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
 
 export default function DomainNameSystem() {
   const PageIcon = DatabaseZap;
@@ -79,13 +80,15 @@ export default function DomainNameSystem() {
               </TableBody>
             </Table>
             <div className="flex items-center justify-end gap-2 mt-4">
-              <Button
-                size="lg"
-                type="submit"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                Add
-              </Button>
+              <Link href="/network/domainName/addDomain" passHref >
+                <Button
+                  size="lg"
+                  type="submit"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  Add
+                </Button>
+              </Link>
 
               <Button
                 size="lg"
@@ -149,15 +152,14 @@ export default function DomainNameSystem() {
                 </Select>
               </div>
               <div className="flex items-center justify-end mb-4">
-              <Button
-                size="lg"
-                type="submit"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                Save
-              </Button>
+                <Button
+                  size="lg"
+                  type="submit"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  Save
+                </Button>
               </div>
-              
             </form>
           </div>
         </CardContent>
