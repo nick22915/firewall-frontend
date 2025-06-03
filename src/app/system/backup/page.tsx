@@ -57,6 +57,7 @@ export default function Backup() {
             <CardTitle className="text-2xl font-medium text-primary pb-5">
               Backups
             </CardTitle>
+            <label className="text-gray-400">Show a backup file here if exist </label>
           </div>
           <div className="border rounded-md p-4 mb-4">
             <CardTitle className="text-2xl font-medium text-primary pb-5">
