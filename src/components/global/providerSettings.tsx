@@ -15,6 +15,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import Link from "next/link";
 
 const providerSelect = [
   {
@@ -74,10 +75,13 @@ export default function ProviderSettings() {
 
   return (
     <div className="border rounded-md p-4 mt-5">
-      <Button variant="outline" className="mb-5">
-        <ArrowLeft className="h-4 w-4" />
-        <a href="/firewall/intrusionPrevention"> Back</a>
-      </Button>
+      <Link href="/firewall/intrusionPrevention">
+        <Button variant="outline" className="mb-5">
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </Button>
+      </Link>
+
       <CardTitle className="text-2xl font-medium text-primary pb-5">
         Provider Settings
       </CardTitle>

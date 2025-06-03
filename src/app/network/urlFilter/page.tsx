@@ -4,6 +4,7 @@ import { Filter } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import BlacklistOptions from "@/data/blacklistOptions";
 import {
   Select,
   SelectContent,
@@ -11,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Link from "next/link";
 
 export default function UrlFilter() {
   const PageIcon = Filter;
@@ -37,52 +39,16 @@ export default function UrlFilter() {
               <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
                 Block Categories
               </h3>
+
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-2">
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">ads:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">aggressive:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">audio-video:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">drugs:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">gambling:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">hacking:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">mail:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">porn:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">proxy:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">violence:</label>
-                  <Checkbox />
-                </div>
-                <div className="flex items-center">
-                  <label className="text-gray-600 mr-2">warez:</label>
-                  <Checkbox />
-                </div>
+                {BlacklistOptions.map((option) => (
+                  <div className="flex items-center" key={option.id}>
+                    <label className="text-gray-600 mr-2">{option.text}:</label>
+                    <Checkbox />
+                  </div>
+                ))}
               </div>
+
               <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
                 Custom Blacklist
               </h3>
@@ -194,13 +160,15 @@ export default function UrlFilter() {
                 <Checkbox />
               </div>
               <div className="flex justify-end mt-4">
-                <Button
-                  size="lg"
-                  type="submit"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90"
-                >
-                 <a href="/network/urlFilter/manageRepository">Manage Repository</a> 
-                </Button>
+                <Link href="/network/urlFilter/manageRepository" passHref>
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Manage Repository
+                  </Button>
+                </Link>
               </div>
 
               <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
@@ -226,21 +194,27 @@ export default function UrlFilter() {
               </h3>
               <div className="border-b border-gray-300 mb-6"></div>
               <div className="flex justify-start gap-4">
-                <Button
-                  size="lg"
-                  type="submit"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90"
-                >
-                  Set Time Constraints
-                </Button>
-                <Button
-                  size="lg"
-                  type="submit"
-                  className="bg-accent text-accent-foreground hover:bg-accent/90"
-                >
-                  <a href="/network/urlFilter/quotaRule">Set User Quota</a> 
-                </Button>
+                <Link href="/network/urlFilter/timeConstrains" passHref>
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Set Time Constraints
+                  </Button>
+                </Link>
+
+                <Link href="/network/urlFilter/quotaRule" passHref>
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Set User Quota
+                  </Button>
+                </Link>
               </div>
+
               <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
                 Block Page Settings
               </h3>
@@ -503,18 +477,21 @@ export default function UrlFilter() {
             <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
               Blacklist Editor
             </h3>
+
             <div className="border-b border-gray-300 mb-6"></div>
             <p className="text-gray-600 text-sm mb-4">
               Create and edit your own blacklist files
             </p>
             <div className="flex justify-start">
-              <Button
-                size="lg"
-                type="submit"
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                <a href="/network/urlFilter/blacklistEditor">Blacklist Editor</a> 
-              </Button>
+              <Link href="/network/urlFilter/blacklistEditor" passHref>
+                <Button
+                  size="lg"
+                  type="submit"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  Blacklist Editor
+                </Button>
+              </Link>
             </div>
             <h3 className="text-lg font-medium text-gray-700 mb-4 mt-5">
               Include complete blacklist:

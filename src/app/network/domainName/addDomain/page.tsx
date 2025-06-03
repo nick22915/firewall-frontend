@@ -133,49 +133,6 @@ export default function AddDomain() {
               </div>
             </form>
           </div>
-
-          <div className="border rounded-md p-4 mt-5">
-            <CardTitle className="text-2xl font-medium text-primary pb-5">
-              Devices on Blue
-            </CardTitle>
-
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-accent text-white">
-                  <TableHead className="w-[100px] text-white">Zone</TableHead>
-                  <TableHead className="text-white text-center">
-                    Nameservers
-                  </TableHead>
-                  <TableHead className="text-right text-white">
-                    Remark
-                  </TableHead>
-                  <TableHead className="text-right text-white">
-                    Action
-                  </TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {dnsConfiguration.map((device, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="text-center">{device.zone}</TableCell>
-                    <TableCell className="text-center">
-                      {device.Nameservers}
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {device.remark}
-                    </TableCell>
-                    <TableCell className="text-right flex gap-2 justify-end">
-                      <Edit />{" "}
-                      <Delete
-                        className="cursor-pointer text-refire"
-                        onClick={() => handleDeleteDevice(index)}
-                      />
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </div>
         </CardContent>
       </Card>
     </div>

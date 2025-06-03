@@ -17,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
 
 export default function FirewallRules() {
   const PageIcon = ListChecks;
@@ -83,13 +84,15 @@ export default function FirewallRules() {
             </div>
             <div className="firewall-policy-label">Policy: Allowed</div>
             <div className="flex justify-end mt-5">
-              <Button
-                size="lg"
-                asChild
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-              >
-                <a href="/">New Rule</a>
-              </Button>
+              <Link href="/firewall/firewallRules/newRule" passHref>
+                <Button
+                  size="lg"
+                  type="submit"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
+                >
+                  New Rule
+                </Button>
+              </Link>
             </div>
           </div>
         </CardContent>
