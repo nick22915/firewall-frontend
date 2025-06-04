@@ -33,10 +33,10 @@ export default function FirewallLogs() {
 
   const router = useRouter(); // Hook para redireccionar
 
-  const handleSourceClick = (source: string, country: string) => {
+  const handleSourceClick = (source: string, country: string, redirect: string) => {
     // Redirigir a otra página con el parámetro `source`
     router.push(
-      `/detail/ipInformationDetail?source=${source}&country=${country}`
+      `/detail/ipInformationDetail?source=${source}&country=${country}&redirect=${redirect}`
     );
   };
 
@@ -158,7 +158,7 @@ export default function FirewallLogs() {
                     <TableCell className="text-right">{log.Proto}</TableCell>
                     <TableCell
                       className="text-right text-redfire hover:text-redfire/60 cursor-pointer"
-                      onClick={() => handleSourceClick(log.Source, log.Country)}
+                      onClick={() => handleSourceClick(log.Source, log.Country, "/logs/firewallLogs")}
                     >
                       {" "}
                       {log.Source}

@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
 import {
   Card,
   CardContent,
@@ -7,7 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Wifi } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -19,17 +19,31 @@ import {
   TableHead,
 } from "@/components/ui/table";
 import connectionsData from "@/data/connectionsTable";
+import { useRouter } from "next/navigation";
 
 export default function Connections() {
   const PageIcon = Wifi;
+
+  const router = useRouter();
+
+  const handleSourceClick = (
+    source: string,
+    country: string,
+    redirect: string
+  ) => {
+    // Redirigir a otra página con el parámetro `source`
+    router.push(
+      `/detail/ipInformationDetail?source=${source}&country=${country}&redirect=${redirect}`
+    );
+  };
 
   const getStatusClass = (status: string) => {
     if (status.includes("INTERNET")) {
       return "bg-redfire";
     }
     if (status.includes("LAN")) {
-        return "bg-greenfire";
-      }
+      return "bg-greenfire";
+    }
     if (status.includes("DMZ")) {
       return "bg-[#ffc107]";
     }
@@ -137,13 +151,29 @@ export default function Connections() {
                       {connection.Protocol}
                     </TableCell>
                     <TableCell
-                      className={`w-[200px] text-right ${getStatusClass(
+                      className={`w-[200px] text-right cursor-pointer ${getStatusClass(
                         connection.connection_type
                       )}`}
+                      onClick={() =>
+                        handleSourceClick(
+                          connection.Source_IP_Port,
+                          "?",
+                          "/status/connections"
+                        )
+                      }
                     >
                       {connection.Source_IP_Port}
                     </TableCell>
-                    <TableCell className="w-[200px] text-right">
+                    <TableCell
+                      className="w-[200px] text-right text-redfire hover:text-redfire/60 cursor-pointer"
+                      onClick={() =>
+                        handleSourceClick(
+                          connection.Dest_IP_Port,
+                          "?",
+                          "/status/connections"
+                        )
+                      }
+                    >
                       {connection.Dest_IP_Port}
                     </TableCell>
                     <TableCell className="w-[200px] text-center">

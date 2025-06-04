@@ -19,6 +19,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { hashAlgorithm, encryption } from "@/data/cryptographicSelect";
+import Link from "next/link";
 
 export default function OpenVpn() {
   const PageIcon = ShieldCheck;
@@ -154,21 +155,26 @@ export default function OpenVpn() {
               </div>
 
               <div className="flex justify-end gap-4">
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
-                >
-                  <a href="/">Static IP Address Pools</a>
-                </Button>
+                <Link href="/services/openVpn/staticIpAddressPool" passHref>
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Static IP Address Pools
+                  </Button>
+                </Link>
 
-                <Button
-                  size="lg"
-                  asChild
-                  className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
-                >
-                  <a href="/">Advanced Server Options</a>
-                </Button>
+                <Link href="/services/openVpn/advancedServerOptions" passHref>
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Advanced Server Options
+                  </Button>
+                </Link>
+
                 <Button
                   size="lg"
                   asChild

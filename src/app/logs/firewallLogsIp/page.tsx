@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, ArrowLeft, ArrowRight, Plus } from "lucide-react";
@@ -20,6 +22,7 @@ import {
 import { selectMonth, selectDay } from "@/data/selectDate";
 import { Input } from "@/components/ui/input";
 import DynamicPieChart from "@/components/ui/dynamicPieChart";
+import { useRouter } from "next/navigation";
 
 export default function FirewallLogIP() {
   const PageIcon = BarChart3;
@@ -29,19 +32,88 @@ export default function FirewallLogIP() {
   const currentDay = date.getDate();
   // should be updated when change the date filter
 
+  const router = useRouter();
+
+  const handleSourceClick = (source: string, country: string, redirect: string) => {
+    // Redirigir a otra página con el parámetro `source`
+    router.push(
+      `/detail/ipInformationDetail?source=${source}&country=${country}&redirect=${redirect}`
+    );
+  };
+
   const sampleDataPiChart = [
-    { "id": 1, "name": "172.16.90.120", "value": 455751, "percentage": 97, "country": "United States" },
-    { "id": 2, "name": "172.16.90.117", "value": 4167, "percentage": 1, "country": "Canada" },
-    { "id": 3, "name": "172.16.90.105", "value": 954, "percentage": 1, "country": "Germany" },
-    { "id": 4, "name": "172.16.90.114", "value": 940, "percentage": 0, "country": "France" },
-    { "id": 5, "name": "172.16.90.112", "value": 888, "percentage": 0, "country": "Japan" },
-    { "id": 6, "name": "172.16.90.100", "value": 883, "percentage": 0, "country": "Australia" },
-    { "id": 7, "name": "172.16.90.109", "value": 615, "percentage": 0, "country": "Brazil" },
-    { "id": 8, "name": "172.16.90.7", "value": 418, "percentage": 0, "country": "India" },
-    { "id": 9, "name": "172.16.90.200", "value": 883, "percentage": 0, "country": "United Kingdom" },
-    { "id": 10, "name": "172.16.90.10", "value": 615, "percentage": 0, "country": "Mexico" },
-    { "id": 11, "name": "172.16.90.164", "value": 418, "percentage": 0, "country": "Spain" }
-  ]
+    {
+      id: 1,
+      name: "172.16.90.120",
+      value: 455751,
+      percentage: 97,
+      country: "United States",
+    },
+    {
+      id: 2,
+      name: "172.16.90.117",
+      value: 4167,
+      percentage: 1,
+      country: "Canada",
+    },
+    {
+      id: 3,
+      name: "172.16.90.105",
+      value: 954,
+      percentage: 1,
+      country: "Germany",
+    },
+    {
+      id: 4,
+      name: "172.16.90.114",
+      value: 940,
+      percentage: 0,
+      country: "France",
+    },
+    {
+      id: 5,
+      name: "172.16.90.112",
+      value: 888,
+      percentage: 0,
+      country: "Japan",
+    },
+    {
+      id: 6,
+      name: "172.16.90.100",
+      value: 883,
+      percentage: 0,
+      country: "Australia",
+    },
+    {
+      id: 7,
+      name: "172.16.90.109",
+      value: 615,
+      percentage: 0,
+      country: "Brazil",
+    },
+    { id: 8, name: "172.16.90.7", value: 418, percentage: 0, country: "India" },
+    {
+      id: 9,
+      name: "172.16.90.200",
+      value: 883,
+      percentage: 0,
+      country: "United Kingdom",
+    },
+    {
+      id: 10,
+      name: "172.16.90.10",
+      value: 615,
+      percentage: 0,
+      country: "Mexico",
+    },
+    {
+      id: 11,
+      name: "172.16.90.164",
+      value: 418,
+      percentage: 0,
+      country: "Spain",
+    },
+  ];
   // sample data for the dynamic pie chart component
 
   return (
@@ -147,7 +219,9 @@ export default function FirewallLogIP() {
               </TableCaption>
               <TableHeader>
                 <TableRow className="bg-accent text-white">
-                  <TableHead className="w-[100px] text-white">IP Address</TableHead>
+                  <TableHead className="w-[100px] text-white">
+                    IP Address
+                  </TableHead>
                   <TableHead className="text-white text-center">
                     Country
                   </TableHead>
@@ -165,7 +239,13 @@ export default function FirewallLogIP() {
               <TableBody>
                 {sampleDataPiChart.map((port) => (
                   <TableRow key={port.id}>
-                    <TableCell className="w-[200px]">{port.name}</TableCell>
+                    <TableCell
+                      className="w-[200px] text-right text-redfire hover:text-redfire/60 cursor-pointer"
+                      onClick={() => handleSourceClick(port.name, port.country, "/logs/firewallLogsIp")}
+                    >
+                      {" "}
+                      {port.name}
+                    </TableCell>
                     <TableCell className="w-[200px] text-center">
                       {port.country}
                     </TableCell>

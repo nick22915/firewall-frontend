@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import ProviderSettings from "@/components/global/providerSettings";
+import Link from "next/link";
 
 export default function IntrusionPrevention() {
   const PageIcon = ShieldAlert;
@@ -95,6 +96,17 @@ export default function IntrusionPrevention() {
                   <TableBody></TableBody>
                 </Table>
                 <div className="flex justify-end gap-3 mt-5">
+                  <Link href="/firewall/intrusionPrevention/customizeRuleset">
+                  <Button
+                    size="lg"
+                    type="submit"
+                    className="bg-accent text-accent-foreground hover:bg-accent/90"
+                  >
+                    Customize Ruleset
+                  </Button>
+                  </Link>
+                
+
                   <Button
                     size="lg"
                     type="submit"

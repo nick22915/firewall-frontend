@@ -28,12 +28,13 @@ export default function IpInformationDetail() {
   const searchParams = useSearchParams();
   const source = searchParams.get("source");
   const country = searchParams.get("country");
+  const redirect = searchParams.get("redirect");
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
       <div className="mb-6">
         <Button variant="outline" asChild>
-          <Link href="/logs/firewallLogs" className="flex items-center gap-2">
+          <Link href={redirect || "/"} className="flex items-center gap-2">
             <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
