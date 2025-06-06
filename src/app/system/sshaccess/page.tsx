@@ -8,6 +8,14 @@ import {
 } from "@/components/ui/card";
 import { Terminal } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 export default function SshAccess() {
   const PageIcon = Terminal;
@@ -71,20 +79,20 @@ export default function SshAccess() {
 
               <div className="flex justify-end gap-4">
                 <Button
-                    size="lg"
-                    asChild
-                    className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
-                  >
-                    <a href="/">Stop SSH Daemon in 15 minutes</a>
-                  </Button>
-                
+                  size="lg"
+                  asChild
+                  className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
+                >
+                  <a href="/">Stop SSH Daemon in 15 minutes</a>
+                </Button>
+
                 <Button
-                    size="lg"
-                    asChild
-                    className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
-                  >
-                    <a href="/">Stop SSH Daemon in 30 minutes</a>
-                  </Button>
+                  size="lg"
+                  asChild
+                  className="bg-accent/80 text-accent-foreground hover:bg-accent/60 inline-flex justify-center py-2 px-4"
+                >
+                  <a href="/">Stop SSH Daemon in 30 minutes</a>
+                </Button>
                 <div className="flex justify-end">
                   <Button
                     size="lg"
@@ -96,6 +104,45 @@ export default function SshAccess() {
                 </div>
               </div>
             </form>
+          </div>
+
+          <div className="border rounded-md p-4 mt-5">
+            <CardTitle className="text-2xl font-medium text-primary pb-5">
+              SSH Host Keys
+            </CardTitle>
+
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-accent text-white">
+                  <TableHead className="w-[100px] text-white">Key</TableHead>
+                  <TableHead className="text-white">Type</TableHead>
+                  <TableHead className="text-white">Fingerprint</TableHead>
+                  <TableHead className="text-white">Size (bits)</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody></TableBody>
+            </Table>
+          </div>
+
+          <div className="border rounded-md p-4 mt-5">
+            <CardTitle className="text-2xl font-medium text-primary pb-5">
+              Active logins
+            </CardTitle>
+
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-accent text-white">
+                  <TableHead className="w-[100px] text-white">
+                    Username
+                  </TableHead>
+                  <TableHead className="text-white">Logged in since</TableHead>
+                  <TableHead className="text-white">IP address</TableHead>
+                  <TableHead className="text-white">Country</TableHead>
+                  <TableHead className="text-white">rDNS</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody></TableBody>
+            </Table>
           </div>
         </CardContent>
       </Card>

@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import BandWidthSettingsSelect from "@/data/bandWidthSettings";
 
 export default function QualityOfService() {
   const PageIcon = Settings2;
@@ -88,15 +89,17 @@ export default function QualityOfService() {
                   Link-Layer Encapsulation:
                 </label>
                 <Select>
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Select" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">
-                      Conservative (should work on all connections, 48 bytes)
-                    </SelectItem>
-                  </SelectContent>
-                </Select>
+                              <SelectTrigger className="w-full">
+                                <SelectValue placeholder="Select" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                {BandWidthSettingsSelect.map((option) => (
+                                  <SelectItem key={option.id} value={option.value}>
+                                    {option.text}
+                                  </SelectItem>
+                                ))}
+                              </SelectContent>
+                            </Select>
               </div>
 
               <div className="flex justify-end gap-4">
