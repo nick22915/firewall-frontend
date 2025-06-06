@@ -13,7 +13,7 @@ export default async function HomePage() {
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
       <Card className="shadow-lg">
-      <CardHeader className="bg-muted/50 p-6 rounded-t-lg">
+        <CardHeader className="bg-muted/50 p-6 rounded-t-lg">
           <div className="flex items-center gap-3">
             <Menu className="h-8 w-8 text-primary" />
             <div>
@@ -97,7 +97,7 @@ export default async function HomePage() {
             <p>Please enable the fireinfo service</p>
           </section>
         </div>
-      
+
       </Card>
     </div>
   );
