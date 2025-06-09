@@ -7,7 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Info } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Table,
   TableBody,
@@ -17,10 +16,36 @@ import {
   TableHead,
 } from "@/components/ui/table";
 import { Textarea } from "@/components/ui/textarea";
-import {profileInformation} from "@/data/systemInformation"
+import { profileInformation } from "@/data/systemInformation";
+import callApi from "@/lib/callApi";
 
-export default function SystemInformation() {
+async function getData() {
+  let profileInformation = null; 
+  let error = null;
+
+  try {
+    const response = await callApi.get("/todos/1"); 
+    profileInformation = response.data; 
+  } catch (err: any) {
+    
+    console.error("Error fetching data in SystemInformationPage:", err);
+    error = {
+      message:
+        err.message || "Error desconocido al cargar la información del perfil.",
+    };
+  }
+
+  return profileInformation;
+}
+
+// Server Component can be an async Function .
+// Data can be fetched directly inside the component
+export default async function SystemInformation() {
   const PageIcon = Info;
+  const data = await getData();
+  console.log("This is the data from de example API", data);
+
+  // To inject the data in the code just use {} and the data propertie: {data.title}
 
   return (
     <div className="container mx-auto p-4 sm:p-6 lg:p-8">
@@ -96,7 +121,7 @@ export default function SystemInformation() {
               </div>
 
               <div className="mb-4">
-              <Textarea
+                <Textarea
                   className="w-full h-50 border-gray-300 rounded-md shadow-sm focus:ring-accent focus:border-accent text-sm p-2"
                   value={JSON.stringify(profileInformation, null, 2)}
                   readOnly
